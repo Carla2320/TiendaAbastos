@@ -1,19 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { updateEstado } from "../actions/product";
+import { useHistory } from "react-router-dom";
 const TablaProductos = ({ id, nombre, imagen, estado, precio, descripcion }) => {
-
-  //   const [datos] = useState({
-  //     nombre:nombre,
-  //     imagen:imagen,
-  //     stock:stock,
-  //     precio:precio,
-  //     descripcion:descripcion
-  // })
-
-  // const enviardatos =(event) =>{
-  //   event.preventDefault();
-  //   console.log(datos)
-  // }
-
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const Actualizar=()=>{
+    console.log("actual",id, estado);
+    estado=0;
+    dispatch(updateEstado(id,estado));
+    window.location.reload();
+}
   return (
     <>
       <tbody>
@@ -29,10 +26,8 @@ const TablaProductos = ({ id, nombre, imagen, estado, precio, descripcion }) => 
           <td>
             <button class="btn btn-primary" type="submit" >
               Editar
-            </button>
-          </td>
-          <td>
-            <button class="btn btn-primary" type="submit" >
+            </button>{" "}
+            <button class="btn btn-primary" type="submit" onClick={Actualizar} >
               Inactivar
             </button>
           </td>

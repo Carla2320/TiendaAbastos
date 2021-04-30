@@ -14,8 +14,9 @@ export const product = (num_productos,nombre,descripcion,precio,estado,porcentaj
   };
   
 
-export const updateDate = (token,fecha_fin) => {
+export const updateEstado = (num_productos,estado) => {
     return async () => {
-        const resp = await fetchSinToken('sesion/actualizarFecha',{token,fecha_fin},'POST');
+      console.log("actualizado",num_productos, estado)
+        const resp = await fetchSinToken('user/actualizarEstado',{num_productos,estado},'POST');
     }
 }

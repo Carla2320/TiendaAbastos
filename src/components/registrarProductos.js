@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { product } from "../actions/product";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {Table, Button, Container, Modal, ModalBody, ModalHeader,FormGroup,ModalFooter} from 'reactstrap'
 
  const RegistrarProducto = () => {
  
@@ -67,9 +69,12 @@ import { product } from "../actions/product";
 
 
   return (
+    <Container>
     <div className="container mt-5" id="contenedor">
-    <div className="row" id="subcontenedor">
-      <h1 className="titulo">PRODUCTOS</h1>
+      <ModalHeader>
+      <div><h3>Editar Registro</h3></div>
+      </ModalHeader>
+      <ModalBody>
       <form onSubmit={enviardatos}>
         <div className="form-group">
           <input
@@ -135,6 +140,7 @@ import { product } from "../actions/product";
 
         <div className="form-group">
           <button
+            color="sucess"
             type="button"
             className="btn btn-light"
             type="submit"
@@ -142,8 +148,7 @@ import { product } from "../actions/product";
             onClick={handleInputChange}
           > Guardar
           </button>
-        </div>
-        <div className="form-group">
+          {" "}
           <button
             type="button"
             className="btn btn-light"
@@ -153,17 +158,12 @@ import { product } from "../actions/product";
           </button>
         </div>
         <div className="form-group">
-          <button
-            type="button"
-            className="btn btn-light"
-            type="submit"
-          >
-            Detalle Product
-          </button>
+         
         </div>
       </form>
+      </ModalBody>
     </div>
-    </div>
+    </Container>
   );
 };
 export default RegistrarProducto;

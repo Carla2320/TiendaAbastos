@@ -16,7 +16,7 @@ export const Routers = () => {
           <Route exact path="/home" component={App} />
           <Route exact path="/registrarProducto" component={RegistrarProducto} />
           <Route exact path="/visualizar" component={ProductoLista} />
-          <Redirect to="/registrarProducto" />
+          <Redirect to="/visualizar" />
         </Switch>
         </BrowserRouter>
       </div>
