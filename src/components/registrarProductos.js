@@ -51,6 +51,7 @@ import { product } from "../actions/product";
   const visualizarP = (event) => {
     history.push("/visualizar");
   };
+  
   const entradascombo = (name) => {
     let cargar = (
       <option width="20px" id="op" class="form-check-input" value={name}>
@@ -146,7 +147,6 @@ import { product } from "../actions/product";
           <button
             type="button"
             className="btn btn-light"
-            type="submit"
             onClick={visualizarP}
           >
             Visualizar
@@ -157,7 +157,6 @@ import { product } from "../actions/product";
             type="button"
             className="btn btn-light"
             type="submit"
-            onClick={detalle}
           >
             Detalle Product
           </button>
