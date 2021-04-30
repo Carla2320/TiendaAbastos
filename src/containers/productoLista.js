@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import VisualizarProducto from "../components/visualizarProductos";
+import RegistrarProducto from "../components/registrarProductos";
 
 class ProductoLista extends Component {
   state = {
@@ -20,9 +21,13 @@ class ProductoLista extends Component {
       });
   }
 
+
   render() {
+ 
     const { datos } = this.state;
-    return <VisualizarProducto datos={datos} />;
+    const json = JSON.stringify(datos);
+    localStorage.setItem("productos", json);
+    return <VisualizarProducto datos={datos} />
   }
 }
 export default ProductoLista;

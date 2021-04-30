@@ -17,7 +17,7 @@ const fetchSinToken = ( endpoint, data, method = 'GET' ) => {
         });
        
     }
-    
+  
 }
 const visualizar = ( endpoint, data, method = 'GET' ) => {
     const url = `${baseURL}/${endpoint}`;

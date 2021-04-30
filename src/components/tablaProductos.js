@@ -1,40 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateEstado } from "../actions/product";
 import { useHistory } from "react-router-dom";
-const TablaProductos = ({ id, nombre, imagen, estado, precio, descripcion }) => {
-  const dispatch = useDispatch();
-  const history = useHistory();
-  const Actualizar=()=>{
-    console.log("actual",id, estado);
-    estado=0;
-    dispatch(updateEstado(id,estado));
-    window.location.reload();
-}
-  return (
-    <>
-      <tbody>
-        <tr>
-          <td>{id}</td>
-          <td>{nombre}</td>
-          <td>
-            <img src={imagen} width="80" />
-          </td>
-          <td>{estado}</td>
-          <td>{precio}</td>
-          <td>{descripcion}</td>
-          <td>
-            <button class="btn btn-primary" type="submit" >
-              Editar
+const TablaProductos = ({ id, nombre, imagen, estado, precio,descuento, descripcion }) => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const Actualizar = () => {
+        estado = 0;
+        dispatch(updateEstado(id, estado));
+    }
+
+    return (
+        <>
+            <tbody>
+                <tr>
+                    <td>{id}</td>
+                    <td>{nombre}</td>
+                    <td>
+                        <img src={imagen} width="80" />
+                    </td>
+                    <td>{estado}</td>
+                    <td>{precio}</td>
+                    <td>{descuento}</td>
+                    <td>{descripcion}</td>
+                    <td>
+                        <button class="btn btn-primary" type="submit" >
+                            Editar
             </button>{" "}
-            <button class="btn btn-primary" type="submit" onClick={Actualizar} >
-              Inactivar
+                        <button class="btn btn-primary" type="submit" onClick={Actualizar} >
+                            Inactivar
             </button>
-          </td>
-        </tr>
-      </tbody>
-      
-    </>
-  );
+                    </td>
+                </tr>
+            </tbody>
+
+        </>
+    );
 };
 export default TablaProductos;
