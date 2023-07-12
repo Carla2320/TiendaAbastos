@@ -57,7 +57,7 @@ const RegistrarProducto = () => {
     <Container>
       <div className="container mt-5" id="contenedor">
         <ModalHeader>
-          <div><h3>Editar Registro</h3></div>
+          <div><h3>Nuevo Registro</h3></div>
         </ModalHeader>
         <ModalBody>
           <form onSubmit={enviardatos}>

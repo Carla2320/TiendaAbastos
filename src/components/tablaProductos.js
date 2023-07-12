@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateEstado } from "../actions/product";
 import { useHistory } from "react-router-dom";
+import ModalEditarProductos from "./modalEditarProductos";
+
 const TablaProductos = ({ id, nombre, imagen, estado, precio,descuento, descripcion }) => {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -9,6 +11,7 @@ const TablaProductos = ({ id, nombre, imagen, estado, precio,descuento, descripc
         estado = 0;
         dispatch(updateEstado(id, estado));
     }
+
 
     return (
         <>
@@ -24,9 +27,11 @@ const TablaProductos = ({ id, nombre, imagen, estado, precio,descuento, descripc
                     <td>{descuento}</td>
                     <td>{descripcion}</td>
                     <td>
-                        <button class="btn btn-primary" type="submit" >
-                            Editar
-            </button>{" "}
+                        {/* <button class="btn btn-primary" type="submit">
+                        
+                        
+                            Editar</button>{" "} */}
+                            <ModalEditarProductos/>
                         <button class="btn btn-primary" type="submit" onClick={Actualizar} >
                             Inactivar
             </button>
